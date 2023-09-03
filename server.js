@@ -4,7 +4,7 @@ const app = express()
 const port = 5000;
 const ShortUrl = require('./models/shortUrl')
 
-mongoose.connect('mongodb://localhost/urlShortener',{
+mongoose.connect('mongodb://127.0.0.1/urlShortener',{
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -39,5 +39,5 @@ const shortUrl=    await ShortUrl.findOne( {short: req.params.shortUrl})
 
 
 app.listen(port , ()=>{
-    console.log(`server runnunf at ${port}`)
+    console.log(`server running at ${port}`)
 })
